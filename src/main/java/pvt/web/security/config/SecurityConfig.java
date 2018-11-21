@@ -13,7 +13,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .mvcMatchers(HttpMethod.GET, "/api/security/test")
-                .authenticated();
+                .authenticated()
+                .and()
+                .csrf()
+                .disable();
     }
 
 }
