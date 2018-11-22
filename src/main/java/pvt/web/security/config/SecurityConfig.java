@@ -15,6 +15,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .mvcMatchers(HttpMethod.GET, "/api/security/test")
                 .authenticated()
                 .and()
+                .formLogin()
+                .loginPage("/login.html")
+                .failureForwardUrl("/login.html")
+                .and()
                 .csrf()
                 .disable();
     }
